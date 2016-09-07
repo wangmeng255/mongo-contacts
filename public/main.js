@@ -35,7 +35,7 @@ var Contact = function() {
 };
 
 Contact.prototype.parsePhoneNumber = function(phoneNumber) {
-   phoneNumber = phoneNumber.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+   phoneNumber = phoneNumber.replace(/\d/g,'').replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
    return phoneNumber;
 };
 

@@ -12,7 +12,7 @@ var app = server.app;
 
 chai.use(chaiHttp);
 
-describe('Shopping List', function() {
+describe('Contacts', function() {
     before(function(done) {
         server.runServer(function() {
             Item.create({firstName: 'bright', lastName: 'horizons', phoneNumber: ['(310) 445-8993'], Address: ['2114 Pontius Avenue Los Angeles, CA 90025']},
