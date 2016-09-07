@@ -22,6 +22,9 @@ h1 {
 	display: none;
 	font-weight: 600;
 }
+.add-contact-visible {
+	display: block;
+}
 .add-contact h2 {
 	margin: 0.05% 0;
 	font-size: 1.5rem;

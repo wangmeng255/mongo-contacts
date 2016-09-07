@@ -35,14 +35,14 @@ var Contact = function() {
 };
 
 Contact.prototype.parsePhoneNumber = function(phoneNumber) {
-   phoneNumber = phoneNumber.replace(/\d/g,'').replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+   phoneNumber = phoneNumber.replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
    return phoneNumber;
 };
 
 Contact.prototype.onAddBarClicked = function() {
 	this.showUl.html("");
 	this.showContact.hide();
-	this.addContact.show();
+	this.addContact.toggleClass("add-contact-visible");
 };
 
 Contact.prototype.onAddItemSubmit = function(event) {
@@ -84,13 +84,13 @@ Contact.prototype.onAddItemSubmit = function(event) {
 	
 	this.clearAddForm();
 	
-	this.addContact.hide();
+	this.addContact.toggleClass("add-contact-visible");
 	this.showContact.show();
 };
 
 Contact.prototype.onCancelClicked = function() {
 	this.clearAddForm();
-	this.addContact.hide();
+	this.addContact.removeClass("add-contact-visible");
 	this.showContact.show();
 };
 
@@ -264,7 +264,10 @@ Contact.prototype.onEditFocusOut = function(event) {
     
     var name = prop.name;
     var person = this.persons[this.showUlid];
-    if(name === "phoneNumber" || name === "Address") person[name][prop.id] = val;
+    if(name === "phoneNumber" || name === "Address") {
+    	if(name === "phoneNumber") val = this.parsePhoneNumber(val);
+    	person[name][prop.index] = val;
+    }
     else person[name] = val;
     
     var value = item.children(".value");
@@ -292,7 +295,7 @@ Contact.prototype.findProperty = function(item) {
 	if(item.parent("ul").text().startsWith("Address")) {
 		prop.name = "Address";
 	}
-	prop.id = item.parent("ul").find("li").index(item);
+	prop.index = item.parent("ul").find("li").index(item);
 	return prop;
 };
 
