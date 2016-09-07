@@ -229,6 +229,7 @@ Contact.prototype.updateItemsView = function() {
 Contact.prototype.onDelItemClicked = function(event) {
 	var selectedli = $(event.target).closest("li");
 	var i = this.listUl.find("li").index(selectedli);
+	this.showContact.hide();
     this.deleteItem(this.persons[i]._id);
 };
 
