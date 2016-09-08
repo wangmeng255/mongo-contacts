@@ -53,7 +53,7 @@ API
       
       ```javascript
       {  
-         __v: 0, //The versionKey is a property set on each document when first created by Mongoose. This keys value contains the               internal revision of the document.
+         __v: 0, //The versionKey is a property set on each document when first created by Mongoose. This keys value contains the internal revision of the document.
          firstName: 'bright',  // user submit object
          lastName: 'horizons',  
          phoneNumber: ['(310) 445-8993'],    
@@ -83,7 +83,7 @@ API
          ok: 1, //if ok is 1, there is no error. if ok is 0, there is an error
          nModified: 1, // if nModified is 1, update success. if nModified is 0, updata fail
          n: 1, // if n is 0, the item cannot be found.
-         lastOp: Timestamp { _bsontype: 'Timestamp', low_: 1, high_: 1473355882 }, //lastOp is the optime timestamp in the oplog of                                                                               the change. bsontype is definition is here https://docs.mongodb.com/manual/reference/bson-types/
+         lastOp: Timestamp { _bsontype: 'Timestamp', low_: 1, high_: 1473355882 }, //lastOp is the optime timestamp in the oplog of the change. bsontype is definition is here https://docs.mongodb.com/manual/reference/bson-types/
          electionId: 579f411220f80a7fc29d0e92  //the if of updated item 
       }
       ```
