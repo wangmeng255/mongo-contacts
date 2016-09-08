@@ -1,28 +1,28 @@
 #Contacts based on Mongoose
 ##How to use it
 
-1.  add Contact  
+* add Contact  
 
 ![alt text][add-contact]
 [add-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/add-contact.png "add contact"
 
-2.  edit information  
+* edit information  
 
 ![alt text][edit-information]
 [edit-information]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/edit-information.png "edit information"
 
-3.  delete Contact  
+* delete Contact  
 
 ![alt text][delete-contact]
 [delete-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/delete-contact.png "delete contact"
 
-4.  view Contact detailed information  
+* view Contact detailed information  
 
 ![alt text][view-contact]
 [view-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/view-contact.png "view contact"
 
 ##API
-1.  get
+1. get
     * Endpoint  
       _GET afternoon-coast-84211.herokuapp.com/items_
     * Request Parameters  
@@ -47,7 +47,7 @@
       }]
       ```
       
-2.  post
+2. post
     * Endpoint  
       _POST afternoon-coast-84211.herokuapp.com/items_
     * Request Parameters  
@@ -74,7 +74,7 @@
       }
       ```
       
-3.  put
+3. put
     * Endpoint  
       _PUT afternoon-coast-84211.herokuapp.com/items/{id}_
     * Request Parameters  
@@ -101,7 +101,7 @@
       }
       ```
       
-4.  delete
+4. delete
     * Endpoint  
       _DELETE afternoon-coast-84211.herokuapp.com/items/{id}_
     * Request Parameters  
