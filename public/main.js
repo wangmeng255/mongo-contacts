@@ -268,7 +268,10 @@ Contact.prototype.onEditFocusOut = function(event) {
     	if(name === "phoneNumber") val = this.parsePhoneNumber(val);
     	person[name][prop.index] = val;
     }
-    else person[name] = val;
+    else {
+    	person[name] = val;
+    	this.showUl.find("h2").text(person.firstName + " " + person.lastName);
+    }
     
     var value = item.children(".value");
     
