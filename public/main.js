@@ -5,7 +5,7 @@ var Contact = function() {
 	this.phoneCount = 0;
 	this.addressCount = 0;
 	this.showUlid = -1;
-	
+
 	this.addBar = $(".add-bar .plus");
 	this.addContact = $(".add-contact");
 	this.showContact = $(".show-contact");
@@ -14,7 +14,7 @@ var Contact = function() {
 	this.listContact = $(".list-contact");
 	this.showUl = $(".show-contact ul");
 	this.cancel = $("#cancel");
-	
+
 	this.addBar.click(this.onAddBarClicked.bind(this));
 	this.addForm.submit(this.onAddItemSubmit.bind(this));
 	this.addForm.on("click", "#add-phone-number", this.onAddphoneNumberClicked.bind(this));
@@ -22,21 +22,21 @@ var Contact = function() {
 	this.addForm.on("click", ".del-phone-number", this.onDelphoneNumberClicked.bind(this));
 	this.addForm.on("click", ".del-address", this.onDelAddressClicked.bind(this));
 	this.cancel.click(this.onCancelClicked.bind(this));
-	
+
 	this.listContact.on("click", ".person", this.onShowContactlistClicked.bind(this));
-	
+
 	this.listUl.on("click", ".del-item", this.onDelItemClicked.bind(this));
-	
+
 	this.showUl.on("dblclick", "li", this.onEditItemClicked.bind(this));
 	this.showUl.on('focusout', 'li input', this.onEditFocusOut.bind(this));
 	this.showUl.on('submit', '.edit-item-form', this.onEditItemSubmit.bind(this));
-	
+
 	this.getItems();
 };
 
 Contact.prototype.parsePhoneNumber = function(phoneNumber) {
-   phoneNumber = phoneNumber.replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
-   return phoneNumber;
+	phoneNumber = phoneNumber.replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+	return phoneNumber;
 };
 
 Contact.prototype.onAddBarClicked = function() {
@@ -188,7 +188,7 @@ Contact.prototype.onShowContactlistClicked = function (event) {
 };
 
 Contact.prototype.addItem = function(person) {
-    if(person) {
+	if(person) {
 	    var ajax = $.ajax('/items', {
 	        type: 'POST',
 	        data: JSON.stringify(person),
@@ -196,7 +196,7 @@ Contact.prototype.addItem = function(person) {
 	        contentType: 'application/json'
 	    });
 	    ajax.done(this.getItems.bind(this));
-    }
+	}
 };
 
 Contact.prototype.getItems = function() {
