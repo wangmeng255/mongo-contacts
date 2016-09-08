@@ -89,6 +89,19 @@ API
       ```
       
 4.  delete
-
+    * Endpoint  
+      _DELETE afternoon-coast-84211.herokuapp.com/items/{id}_
+    * Request Parameters  
+      _none_
+    * Response Format  
+      On success, the HTTP status code in the response header is 200 OK and the response body contains an object in JSON format. On error, the header status code is 500 and the response body contains an error object key message whose value is 'Internal Server Error'.
+    * Example  
+      curl -X "DELETE afternoon-coast-84211.herokuapp.com/items/579f411220f80a7fc29d0e92"  
+      
+      ```javascript
+      {
+         _id: 579f411220f80a7fc29d0e92
+      }
+      ```
 Summary 
 --------
