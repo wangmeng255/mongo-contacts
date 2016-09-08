@@ -1,14 +1,11 @@
-Contacts based on Mongoose
-========
-How to use it
---------
+#Contacts based on Mongoose
+##How to use it
 1.  add Contact
 2.  edit information
 3.  delete Contact
 4.  view Contact detailed information
 
-API
---------
+##API
 1.  get
     * Endpoint  
       _GET afternoon-coast-84211.herokuapp.com/items_
@@ -103,5 +100,5 @@ API
          _id: 579f411220f80a7fc29d0e92
       }
       ```
-Summary 
---------
+##Summary 
+
