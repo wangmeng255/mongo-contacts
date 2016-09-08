@@ -6,11 +6,11 @@
 
 2.  edit information
 ![alt text][edit-information]
-[add-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/edit-information.png "edit information"
+[edit-information]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/edit-information.png "edit information"
 
 3.  delete Contact
 ![alt text][delete-contact]
-[add-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/delete-contact.png "delete contact"
+[delete-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/delete-contact.png "delete contact"
 
 4.  view Contact detailed information
 ![alt text][view-contact]
