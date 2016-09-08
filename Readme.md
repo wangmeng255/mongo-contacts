@@ -102,4 +102,4 @@
       ```
       
 ##Summary 
-
+In this app, users can CRUD(Create, Read, Update, Delete) person's name, phone numbers and addresses to a mongodb.
