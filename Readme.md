@@ -14,7 +14,7 @@ API
       _GET afternoon-coast-84211.herokuapp.com/items_
     * Request Parameters  
       _none_
-    * Response Format
+    * Response Format  
       On success, the HTTP status code in the response header is 200 OK and the response body contains an array of objects in JSON format. On error, the header status code is 500 and the response body contains an error object key message whose value is 'Internal Server Error'.
     * Example  
       curl -X "GET afternoon-coast-84211.herokuapp.com/items"  
@@ -40,7 +40,7 @@ API
       phoneNumber| _Not Required_. Array
       Address | _Not Required_. Array
 
-    * Response Format
+    * Response Format  
       On success, the HTTP status code in the response header is 201 CREATED and the response body contains an object in JSON format. On error, the header status code is 500 and the response body contains an error object key message whose value is 'Internal Server Error'.
     * Example  
       curl -X "POST afternoon-coast-84211.herokuapp.com/items"  
