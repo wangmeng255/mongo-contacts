@@ -191,7 +191,15 @@ Contact.prototype.addItem = function(person) {
 	        type: 'POST',
 	        data: JSON.stringify(person),
 	        dataType: 'json',
-	        contentType: 'application/json'
+	        contentType: 'application/json',
+	        statusCode: {
+				404: function(res) {
+					alert(res.message);
+				},
+				500: function(res) {
+					alert(res.message);
+				}
+		    }
 	    });
 	    ajax.done(this.getItems.bind(this));
 	}
@@ -200,7 +208,15 @@ Contact.prototype.addItem = function(person) {
 Contact.prototype.getItems = function() {
 	var ajax = $.ajax('/items', {
 	    type: 'GET',
-	    dataType: 'json'
+	    dataType: 'json',
+	    statusCode: {
+			404: function(res) {
+				alert(res.message);
+			},
+			500: function(res) {
+				alert(res.message);
+			}
+		}
 	});
 	ajax.done(this.onGetItemsDone.bind(this));
 };
@@ -233,7 +249,15 @@ Contact.prototype.onDelItemClicked = function(event) {
 Contact.prototype.deleteItem = function(id) {
 	var ajax = $.ajax('/items/' + id, {
 	    type: 'DELETE',
-	    dataType: 'json'
+	    dataType: 'json',
+	    statusCode: {
+	    	404: function(res) {
+	    		alert(res.message);
+	    	},
+	    	500: function(res) {
+	    		alert(res.message);
+	    	}
+	    }	    
 	});
 	ajax.done(this.getItems.bind(this));
 };
@@ -305,7 +329,15 @@ Contact.prototype.editItem = function(id, item) {
 	    type: 'PUT',
 	    data: JSON.stringify(item),
 	    dataType: 'json',
-	    contentType: 'application/json'
+	    contentType: 'application/json',
+	    statusCode: {
+	    	404: function(res) {
+	    		alert(res.message);
+	    	},
+	    	500: function(res) {
+	    		alert(res.message);
+	    	}
+	    }
 	});
 	ajax.done(this.getItems.bind(this));
 };
