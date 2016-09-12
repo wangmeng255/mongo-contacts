@@ -35,7 +35,7 @@ var Contact = function() {
 };
 
 Contact.prototype.parsePhoneNumber = function(phoneNumber) {
-	phoneNumber = phoneNumber.replace(/\D/g,'').replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+	phoneNumber = phoneNumber.replace(/\D/g,"").replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
 	return phoneNumber;
 };
 
@@ -58,18 +58,16 @@ Contact.prototype.onAddItemSubmit = function(event) {
 	    if(formSerial[i].name.startsWith("phoneNumber")) {
 	      person["phoneNumber"].push(this.parsePhoneNumber(formSerial[i].value));
 	    }
+	    else if(formSerial[i].name.startsWith("street")) {
+	      var Address = "";
+	      if(formSerial[i].value) Address += formSerial[i].value + ", ";
+	      if(formSerial[i += 1].value) Address += formSerial[i].value + ", ";
+	      if(formSerial[i += 1].value) Address += formSerial[i].value;
+	      if(Address.slice(Address.length - 2, Address.length - 1) === ", ") Address = Address.slice(0, Address.length - 3);
+	      person.Address.push(Address);
+	    }
 	    else {
-	      if(formSerial[i].name.startsWith("street")) {
-	        var Address = "";
-	        if(formSerial[i].value) Address += formSerial[i].value + ", ";
-	        if(formSerial[i += 1].value) Address += formSerial[i].value + ", ";
-	        if(formSerial[i += 1].value) Address += formSerial[i].value;
-	        if(Address.slice(Address.length - 2, Address.length - 1) === ", ") Address = Address.slice(0, Address.length - 3);
-	        person.Address.push(Address);
-	      }
-	      else {
-	        person[formSerial[i].name] = formSerial[i].value;
-	      }
+	      person[formSerial[i].name] = formSerial[i].value;
 	    }
 	  }
 	  
@@ -210,7 +208,6 @@ Contact.prototype.getItems = function() {
 Contact.prototype.onGetItemsDone = function(items) {
 	this.persons = items;
 	this.updateItemsView();
-	console.log(items);
 };
 
 Contact.prototype.updateItemsView = function() {
