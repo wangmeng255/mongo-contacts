@@ -18,7 +18,7 @@ app.get('/items', function(req, res) {
                 message: 'Internal Server Error'
             });
         }
-        res.json(items);
+        res.status(200).json(items);
     });
 });
 
