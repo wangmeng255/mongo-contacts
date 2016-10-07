@@ -300,6 +300,9 @@ Contact.prototype.onEditFocusOut = function(event) {
 	    this.editItem(id, person);
 	    value.text(val);
 	}
+	else {
+		alert("the value can't be empty!");
+	}
 	form.attr("hidden", true);
 	value.show();
 	event.preventDefault();
