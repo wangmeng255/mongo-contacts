@@ -14,7 +14,9 @@ var Contact = function() {
 	this.listContact = $(".list-contact");
 	this.showUl = $(".show-contact ul");
 	this.cancel = $("#cancel");
+	this.phoneNumber=$("#phone-number");
 	
+	this.phoneNumber.keyup(this.parsePhoneNumber.bind(this));
 	this.addBar.click(this.onAddBarClicked.bind(this));
 	this.addForm.submit(this.onAddItemSubmit.bind(this));
 	this.addForm.on("click", "#add-phone-number", this.onAddphoneNumberClicked.bind(this));
@@ -34,9 +36,9 @@ var Contact = function() {
 	this.getItems();
 };
 
-Contact.prototype.parsePhoneNumber = function(phoneNumber) {
-	phoneNumber = phoneNumber.replace(/\D/g,"").replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
-	return phoneNumber;
+Contact.prototype.parsePhoneNumber = function(event) {
+	var phoneNumber = event.target.value.replace(/\D/g,"").replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
+	$(event.target).val(phoneNumber);
 };
 
 Contact.prototype.onAddBarClicked = function() {
@@ -56,7 +58,7 @@ Contact.prototype.onAddItemSubmit = function(event) {
 	  for(var i = 0; i < formSerial.length; i += 1)
 	  {
 	    if(formSerial[i].name.startsWith("phoneNumber")) {
-	      person["phoneNumber"].push(this.parsePhoneNumber(formSerial[i].value));
+	      person["phoneNumber"].push(formSerial[i].value);
 	    }
 	    else if(formSerial[i].name.startsWith("street")) {
 	      var Address = "";
@@ -113,8 +115,11 @@ Contact.prototype.onAddphoneNumberClicked = function() {
 	  "<input type='button' class='del-phone-number' value='Remove Phone Number'></div>" +
 	  "<input type='text' name='phoneNumber" + phoneCount + 
 	  "' id='phone-number" + phoneCount +
-	  "'></div>"
+	  "' placeholder='(000)111-2222'></div>"
 	);
+	var obj = this;
+	obj["phoneNumber" + String(phoneCount)]=$("#phone-number" + String(phoneCount));
+	obj["phoneNumber" + String(phoneCount)].keyup(this.parsePhoneNumber.bind(this));
 };
 
 Contact.prototype.onAddAddressClicked = function() {
@@ -123,11 +128,11 @@ Contact.prototype.onAddAddressClicked = function() {
 	
 	$("#add-address").before("<div><div class='delete-address'><label for='street" + addressCount + 
 	  "'>Street</label><input type='button' class='del-address' value='Remove Address'></div><input type='text' name='street" + addressCount + 
-	  "' id='street" + addressCount + "'></div><div><label for='city" + 
+	  "' id='street" + addressCount + "' placeholder='1234 ABC Ave Apt 000'></div><div><label for='city" + 
 	  addressCount + "'>City</label><br><input type='text' name='city" + addressCount +
-	  "' id='city"+ addressCount +"'></div><div><label for='state" + addressCount + 
+	  "' id='city"+ addressCount +"' placeholder='Los Angeles'></div><div><label for='state" + addressCount + 
 	  "'>State</label><br>" + "<input type='text' name='state" + addressCount + 
-	  "' id='state" + addressCount + "'></div>"); 
+	  "' id='state" + addressCount + "' placeholder='CA'></div>"); 
 };
 
 Contact.prototype.onDelphoneNumberClicked = function(event) {
@@ -286,7 +291,7 @@ Contact.prototype.onEditFocusOut = function(event) {
 	var name = prop.name;
 	var person = this.persons[this.showUlid];
 	if(name === "phoneNumber" || name === "Address") {
-	  if(name === "phoneNumber") val = this.parsePhoneNumber(val);
+	  if(name === "phoneNumber") val = val;
 	  person[name][prop.index] = val;
 	}
 	else {
