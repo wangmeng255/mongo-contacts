@@ -113,7 +113,7 @@ Contact.prototype.onAddphoneNumberClicked = function() {
 	$("#street").parent().before(
 	  "<div><div class='delete-phone-number'><label for='phone-number" + phoneCount +"'>Phone Number</label>" +
 	  "<input type='button' class='del-phone-number' value='Remove Phone Number'></div>" +
-	  "<input type='text' name='phoneNumber" + phoneCount + 
+	  "<input type='tel' name='phoneNumber" + phoneCount + 
 	  "' id='phone-number" + phoneCount +
 	  "' placeholder='(000)111-2222'></div>"
 	);
@@ -166,6 +166,12 @@ Contact.prototype.onShowContactlistClicked = function (event) {
 	               "title='Edit item'>" + 
 	          "<button type='submit' class='visually-hidden'>Edit item</button>" +
 	    "</form>";
+	var editPhoneNumber = 
+	  "<form class='edit-item-form' hidden>" +
+	          "<input type='tel' name='edit-item-input'" +
+	               "title='Edit item'>" + 
+	          "<button type='submit' class='visually-hidden'>Edit item</button>" +
+	    "</form>";
 	
 	this.showUl.html("");
 	var listItem = $(event.target).parent();
@@ -180,7 +186,7 @@ Contact.prototype.onShowContactlistClicked = function (event) {
 	  "<ul>Last name: <li><div class='value'>" + this.persons[i].lastName + "</div>" + editInput + "</li></ul>" +
 	  "<ul>Phone Number:"; 
 	for(var j = 0; j < this.persons[i].phoneNumber.length; j += 1)
-	  showStr += "<li><div class = 'value'>" + this.persons[i].phoneNumber[j] + "</div>" + editInput + "</li>";
+	  showStr += "<li><div class = 'value'>" + this.persons[i].phoneNumber[j] + "</div>" + editPhoneNumber + "</li>";
 	showStr += "</ul><ul>Address:";
 	if(this.persons[i]["Address"][0]) {
 	  for(var j = 0; j < this.persons[i]["Address"].length; j += 1)
