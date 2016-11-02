@@ -1,22 +1,35 @@
 * {
   margin: 0;
-  padding: 0;
+	padding: 0;
   box-sizing: border-box;
   font-family: 'Lato', Calibri, Arial, sans-serif;
 }
 h1 {
-  margin-left: 1%;
+	width: 80%;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1%;
   margin-bottom: 1.5%;
 }
 .side-by-side {
+	width: 80%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 .side-by-side section {
-  width: 20rem;
+  width: 45%;
   margin-left: 3%;
+	margin-top: 1%;
+	margin-bottom: 1.5%;
+}
+.side-by-side {
+	width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 .add-contact {
   display: none;
@@ -33,9 +46,9 @@ h1 {
   margin: 2% 0;
 }
 .add-contact input[type="text"], 
-.add-contact input[type="tel"]{
+.add-contact input[type="tel"] {
   margin: 0.5% 0;
-  width: 20rem;
+  width: 100%;
   font-size: 1.1rem;
 }
 .add-contact-header, .add-phone-number,
@@ -143,10 +156,10 @@ h1 {
   display: inline-block;
 }
 .list-contact a {
-  flex-grow: 3;
-  text-decoration: none;
-  color: #216288;
-  width: 17rem;
+	flex-grow: 3;
+	text-decoration: none;
+	color: #216288;
+	width: 100%;
 }
 .list-contact h4 {
   display: inline-block;
