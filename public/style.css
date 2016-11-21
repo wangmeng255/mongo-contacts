@@ -121,7 +121,6 @@ h1 {
 	margin-left: 1%;
 	clear: both;
 	height: 20rem;
-	overflow: auto;
 	margin-bottom: 2%;
 }
 .list-contact .add-bar {
@@ -201,4 +200,9 @@ h4 {
 }
 .hidden {
 	display: none;
+}
+@media only screen and (max-width: 480px), screen and (max-device-width: 480px) {
+	.side-by-side {
+		flex-direction: column;
+	}
 }
