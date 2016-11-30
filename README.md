@@ -1,4 +1,15 @@
 #Contacts based on Mongoose
+
+Thinkful (https://www.thinkful.com/) Portfolio Exercise - a responsive app built with jQuery, mongoose to save user's contacts information.
+
+##Background
+
+The project is an exercise to use mongoose. Contacts is a good example to practice CRUD (Create, Read, Update, Delete). And users can also use the app to save public contacts information.
+
+##Use Case
+
+In this app, users can CRUD(Create, Read, Update, Delete) person's name, phone numbers and addresses to a Mongodb. Users can add more than one phone numbers and addresses.
+
 ##How to use it
 
 * add Contact  
@@ -116,6 +127,27 @@
          _id: 579f411220f80a7fc29d0e92
       }
       ```
-      
-##Summary 
-In this app, users can CRUD(Create, Read, Update, Delete) person's name, phone numbers and addresses to a mongodb.
+
+##Working Prototype
+
+You can access a working prototype of the app here: (https://mongo-contacts.herokuapp.com/)
+
+##Functionality
+
+The app's main functionality:
+* Adding new contacts includes first name, last name, address, and phone number.
+* Editing contacts includes first name, last name, address, phone number. 
+* Showing all contacts in MongoDB.
+* Deleting contacts entry.
+
+##Technical
+
+The client-side in this app is built in jQuery. The server-side in this app built with mongoose. User information is saved in MongoDB during the user's session. It has been built to be fully responsive across mobile, tablet and desktop screen resolutions.
+
+##Development Roadmap
+
+This is v1.0 of the app, but future enhancements are expected to include:
+* Adding user log in and sign up to protect user's information security.
+* Extending more informations saving for users (e.g. Email etc).
+
+
