@@ -1,38 +1,34 @@
-#Contacts based on Mongoose
+# Contacts based on Mongoose
 
 Thinkful (https://www.thinkful.com/) Portfolio Exercise - a responsive app built with jQuery, mongoose to save user's contacts information.
 
-##Background
+## Background
 
 The project is an exercise to use mongoose. Contacts is a good example to practice CRUD (Create, Read, Update, Delete). And users can also use the app to save public contacts information.
 
-##Use Case
+## Use Case
 
 In this app, users can CRUD(Create, Read, Update, Delete) person's name, phone numbers and addresses to a Mongodb. Users can add more than one phone numbers and addresses.
 
-##How to use it
+## How to use it
 
 * add Contact  
 
-![alt text][add-contact]
-[add-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/add-contact.png "add contact"
+![add-contact](https://github.com/wangmeng255/mongo-contacts/blob/dev/img/add-contact.png "add contact")
 
 * edit information  
 
-![alt text][edit-information]
-[edit-information]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/edit-information.png "edit information"
+![edit-information](https://github.com/wangmeng255/mongo-contacts/blob/dev/img/edit-information.png "edit information")
 
 * delete Contact  
 
-![alt text][delete-contact]
-[delete-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/delete-contact.png "delete contact"
+![delete-contact](https://github.com/wangmeng255/mongo-contacts/blob/dev/img/delete-contact.png "delete contact")
 
 * view Contact detailed information  
 
-![alt text][view-contact]
-[view-contact]: https://github.com/wangmeng255/mongo-contacts/blob/dev/img/view-contact.png "view contact"
+![view-contact](https://github.com/wangmeng255/mongo-contacts/blob/dev/img/view-contact.png "view contact")
 
-##API
+## API
 1. get
     * Endpoint  
       _GET afternoon-coast-84211.herokuapp.com/items_
@@ -128,11 +124,11 @@ In this app, users can CRUD(Create, Read, Update, Delete) person's name, phone n
       }
       ```
 
-##Working Prototype
+## Working Prototype
 
 You can access a working prototype of the app here: (https://mongo-contacts.herokuapp.com/)
 
-##Functionality
+## Functionality
 
 The app's main functionality:
 * Adding new contacts includes first name, last name, address, and phone number.
@@ -140,11 +136,11 @@ The app's main functionality:
 * Showing all contacts in MongoDB.
 * Deleting contacts entry.
 
-##Technical
+## Technical
 
 The client-side in this app is built in jQuery. The server-side in this app built with mongoose. User information is saved in MongoDB during the user's session. It has been built to be fully responsive across mobile, tablet and desktop screen resolutions.
 
-##Development Roadmap
+## Development Roadmap
 
 This is v1.0 of the app, but future enhancements are expected to include:
 * Adding user log in and sign up to protect user's information security.
