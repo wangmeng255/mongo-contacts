@@ -1,6 +1,6 @@
 # Contacts based on Mongoose
 
-Thinkful (https://www.thinkful.com/) Portfolio Exercise - a responsive app built with jQuery, mongoose to save user's contacts information.
+Portfolio Exercise - a responsive app built with jQuery, mongoose to save user's contacts information.
 
 ## Background
 
